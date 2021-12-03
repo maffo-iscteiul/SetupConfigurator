@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGrey"
+    tools:context=".view.SetupReaderJsonDampersActivity">
+
+    <ImageView
+        android:id="@+id/image_view_background"
+        style="@style/ImageViewBackground"
+        android:contentDescription="@string/background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <View
+            android:id="@+id/view_title"
+            style="@style/PrimaryTitleView" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            style="@style/PrimaryTitleTextView"
+            android:layout_alignStart="@+id/view_title"
+            android:layout_alignTop="@+id/view_title"
+            android:layout_alignEnd="@+id/view_title"
+            android:layout_alignBottom="@+id/view_title"
+            android:text="@string/dampers" />
+
+        <View
+            android:id="@+id/view_arrow_backward"
+            style="@style/ViewArrowBack"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
+        <View
+            android:id="@+id/view_arrow_forward"
+            style="@style/ViewArrowForward"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
+        <ScrollView
+            style="@style/ScrollView"
+            android:layout_above="@+id/view_pub"
+            android:layout_below="@+id/view_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_left_front"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_left_front"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_left_front"
+                        android:layout_alignTop="@+id/view_left_front"
+                        android:layout_alignEnd="@+id/view_left_front"
+                        android:layout_alignBottom="@+id/view_left_front"
+                        android:text="@string/left_front" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump1_lf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_left_front"
+                        android:text="@string/bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_bump_lf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_bump1_lf"
+                        android:layout_alignBottom="@+id/text_view_bump1_lf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump_lf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_bump_lf"
+                        android:layout_alignTop="@id/progress_bar_bump_lf"
+                        android:layout_alignEnd="@id/progress_bar_bump_lf"
+                        android:layout_alignBottom="@id/progress_bar_bump_lf" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump1_lf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_bump1_lf"
+                        android:text="@string/fast_bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_bump_lf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_bump1_lf"
+                        android:layout_alignBottom="@+id/text_view_fast_bump1_lf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump_lf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_bump_lf"
+                        android:layout_alignTop="@id/progress_bar_fast_bump_lf"
+                        android:layout_alignEnd="@id/progress_bar_fast_bump_lf"
+                        android:layout_alignBottom="@id/progress_bar_fast_bump_lf" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound1_lf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_fast_bump1_lf"
+                        android:text="@string/rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_rebound_lf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_rebound1_lf"
+                        android:layout_alignBottom="@+id/text_view_rebound1_lf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound_lf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_rebound_lf"
+                        android:layout_alignTop="@id/progress_bar_rebound_lf"
+                        android:layout_alignEnd="@id/progress_bar_rebound_lf"
+                        android:layout_alignBottom="@id/progress_bar_rebound_lf" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_lf1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_rebound1_lf"
+                        android:text="@string/fast_rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_rebound_lf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_rebound_lf1"
+                        android:layout_alignBottom="@+id/text_view_fast_rebound_lf1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_lf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_rebound_lf"
+                        android:layout_alignTop="@id/progress_bar_fast_rebound_lf"
+                        android:layout_alignEnd="@id/progress_bar_fast_rebound_lf"
+                        android:layout_alignBottom="@id/progress_bar_fast_rebound_lf" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_right_front"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_right_front"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_right_front"
+                        android:layout_alignTop="@+id/view_right_front"
+                        android:layout_alignEnd="@+id/view_right_front"
+                        android:layout_alignBottom="@+id/view_right_front"
+                        android:text="@string/right_front" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump1_rf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_right_front"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_bump_rf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_bump1_rf"
+                        android:layout_alignBottom="@+id/text_view_bump1_rf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump_rf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_bump_rf"
+                        android:layout_alignTop="@id/progress_bar_bump_rf"
+                        android:layout_alignEnd="@id/progress_bar_bump_rf"
+                        android:layout_alignBottom="@id/progress_bar_bump_rf" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump1_rf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_bump1_rf"
+                        android:text="@string/fast_bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_bump_rf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_bump1_rf"
+                        android:layout_alignBottom="@+id/text_view_fast_bump1_rf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump_rf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_bump_rf"
+                        android:layout_alignTop="@id/progress_bar_fast_bump_rf"
+                        android:layout_alignEnd="@id/progress_bar_fast_bump_rf"
+                        android:layout_alignBottom="@id/progress_bar_fast_bump_rf" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound1_rf"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_fast_bump1_rf"
+                        android:text="@string/rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_rebound_rf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_rebound1_rf"
+                        android:layout_alignBottom="@+id/text_view_rebound1_rf"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound_rf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_rebound_rf"
+                        android:layout_alignTop="@id/progress_bar_rebound_rf"
+                        android:layout_alignEnd="@id/progress_bar_rebound_rf"
+                        android:layout_alignBottom="@id/progress_bar_rebound_rf" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_rf1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_rebound1_rf"
+                        android:text="@string/fast_rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_rebound_rf"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_rebound_rf1"
+                        android:layout_alignBottom="@+id/text_view_fast_rebound_rf1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_rf"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_rebound_rf"
+                        android:layout_alignTop="@id/progress_bar_fast_rebound_rf"
+                        android:layout_alignEnd="@id/progress_bar_fast_rebound_rf"
+                        android:layout_alignBottom="@id/progress_bar_fast_rebound_rf" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_left_rear"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_left_rear"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_left_rear"
+                        android:layout_alignTop="@+id/view_left_rear"
+                        android:layout_alignEnd="@+id/view_left_rear"
+                        android:layout_alignBottom="@+id/view_left_rear"
+                        android:text="@string/left_rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump1_lr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_left_rear"
+                        android:text="@string/bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_bump_lr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_bump1_lr"
+                        android:layout_alignBottom="@+id/text_view_bump1_lr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump_lr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_bump_lr"
+                        android:layout_alignTop="@id/progress_bar_bump_lr"
+                        android:layout_alignEnd="@id/progress_bar_bump_lr"
+                        android:layout_alignBottom="@id/progress_bar_bump_lr" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump1_lr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_bump1_lr"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/fast_bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_bump_lr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_bump1_lr"
+                        android:layout_alignBottom="@+id/text_view_fast_bump1_lr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump_lr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_bump_lr"
+                        android:layout_alignTop="@id/progress_bar_fast_bump_lr"
+                        android:layout_alignEnd="@id/progress_bar_fast_bump_lr"
+                        android:layout_alignBottom="@id/progress_bar_fast_bump_lr" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound1_lr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_fast_bump1_lr"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_rebound_lr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_rebound1_lr"
+                        android:layout_alignBottom="@+id/text_view_rebound1_lr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound_lr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_rebound_lr"
+                        android:layout_alignTop="@id/progress_bar_rebound_lr"
+                        android:layout_alignEnd="@id/progress_bar_rebound_lr"
+                        android:layout_alignBottom="@id/progress_bar_rebound_lr" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_lr1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_rebound1_lr"
+                        android:text="@string/fast_rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_rebound_lr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_rebound_lr1"
+                        android:layout_alignBottom="@+id/text_view_fast_rebound_lr1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_lr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_rebound_lr"
+                        android:layout_alignTop="@id/progress_bar_fast_rebound_lr"
+                        android:layout_alignEnd="@id/progress_bar_fast_rebound_lr"
+                        android:layout_alignBottom="@id/progress_bar_fast_rebound_lr" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_right_rear"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_right_rear"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_right_rear"
+                        android:layout_alignTop="@+id/view_right_rear"
+                        android:layout_alignEnd="@+id/view_right_rear"
+                        android:layout_alignBottom="@+id/view_right_rear"
+                        android:text="@string/right_rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump1_rr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_right_rear"
+                        android:text="@string/bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_bump_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_bump1_rr"
+                        android:layout_alignBottom="@+id/text_view_bump1_rr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_bump_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_bump_rr"
+                        android:layout_alignTop="@id/progress_bar_bump_rr"
+                        android:layout_alignEnd="@id/progress_bar_bump_rr"
+                        android:layout_alignBottom="@id/progress_bar_bump_rr" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump1_rr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_bump1_rr"
+                        android:layout_alignParentStart="true"
+                        android:text="@string/fast_bump" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_bump_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_bump1_rr"
+                        android:layout_alignBottom="@+id/text_view_fast_bump1_rr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_bump_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_bump_rr"
+                        android:layout_alignTop="@id/progress_bar_fast_bump_rr"
+                        android:layout_alignEnd="@id/progress_bar_fast_bump_rr"
+                        android:layout_alignBottom="@id/progress_bar_fast_bump_rr" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound1_rr"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_fast_bump1_rr"
+                        android:text="@string/rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_rebound_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_rebound1_rr"
+                        android:layout_alignBottom="@+id/text_view_rebound1_rr"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_rebound_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_rebound_rr"
+                        android:layout_alignTop="@id/progress_bar_rebound_rr"
+                        android:layout_alignEnd="@id/progress_bar_rebound_rr"
+                        android:layout_alignBottom="@id/progress_bar_rebound_rr" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_rr1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_rebound1_rr"
+                        android:text="@string/fast_rebound" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_fast_rebound_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_fast_rebound_rr1"
+                        android:layout_alignBottom="@+id/text_view_fast_rebound_rr1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_fast_rebound_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_fast_rebound_rr"
+                        android:layout_alignTop="@id/progress_bar_fast_rebound_rr"
+                        android:layout_alignEnd="@id/progress_bar_fast_rebound_rr"
+                        android:layout_alignBottom="@id/progress_bar_fast_rebound_rr" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/view_pub"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

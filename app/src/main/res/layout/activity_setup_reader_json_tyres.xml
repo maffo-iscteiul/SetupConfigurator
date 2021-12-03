@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGrey"
+    tools:context=".view.SetupReaderJsonTyresActivity">
+
+    <ImageView
+        android:id="@+id/image_view_background"
+        style="@style/ImageViewBackground"
+        android:contentDescription="@string/background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <View
+            android:id="@+id/view_title"
+            style="@style/PrimaryTitleView" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            style="@style/PrimaryTitleTextView"
+            android:layout_alignStart="@+id/view_title"
+            android:layout_alignTop="@+id/view_title"
+            android:layout_alignEnd="@+id/view_title"
+            android:layout_alignBottom="@+id/view_title"
+            android:text="@string/tyres" />
+
+        <View
+            android:id="@+id/view_arrow_forward"
+            style="@style/ViewArrowForward"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
+        <ScrollView
+            style="@style/ScrollView"
+            android:layout_above="@+id/view_pub"
+            android:layout_below="@+id/view_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_left_front"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_left_front"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_left_front"
+                        android:layout_alignTop="@+id/view_left_front"
+                        android:layout_alignEnd="@+id/view_left_front"
+                        android:layout_alignBottom="@+id/view_left_front"
+                        android:text="@string/left_front" />
+
+                    <TextView
+                        android:id="@+id/text_view_psi_1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_left_front"
+                        android:text="@string/psi" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_tyre_pressure_fl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_psi_1"
+                        android:layout_alignBottom="@+id/text_view_psi_1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_tyre_pressure_fl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_tyre_pressure_fl"
+                        android:layout_alignTop="@id/progress_bar_tyre_pressure_fl"
+                        android:layout_alignEnd="@id/progress_bar_tyre_pressure_fl"
+                        android:layout_alignBottom="@id/progress_bar_tyre_pressure_fl" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_psi_1"
+                        android:text="@string/toe" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_toe_fl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_toe_1"
+                        android:layout_alignBottom="@+id/text_view_toe_1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_fl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_toe_fl"
+                        android:layout_alignTop="@id/progress_bar_toe_fl"
+                        android:layout_alignEnd="@id/progress_bar_toe_fl"
+                        android:layout_alignBottom="@id/progress_bar_toe_fl" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_toe_1"
+                        android:text="@string/camber" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_camber_fl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_camber_1"
+                        android:layout_alignBottom="@+id/text_view_camber_1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_fl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_camber_fl"
+                        android:layout_alignTop="@id/progress_bar_camber_fl"
+                        android:layout_alignEnd="@id/progress_bar_camber_fl"
+                        android:layout_alignBottom="@id/progress_bar_camber_fl" />
+
+                    <TextView
+                        android:id="@+id/text_view_caster_1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_camber_1"
+                        android:text="@string/caster" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_caster_fl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_caster_1"
+                        android:layout_alignBottom="@+id/text_view_caster_1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_caster_fl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_caster_fl"
+                        android:layout_alignTop="@id/progress_bar_caster_fl"
+                        android:layout_alignEnd="@id/progress_bar_caster_fl"
+                        android:layout_alignBottom="@id/progress_bar_caster_fl" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_right_front"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_right_front"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_right_front"
+                        android:layout_alignTop="@+id/view_right_front"
+                        android:layout_alignEnd="@+id/view_right_front"
+                        android:layout_alignBottom="@+id/view_right_front"
+                        android:text="@string/right_front" />
+
+                    <TextView
+                        android:id="@+id/text_view_psi_3"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_right_front"
+                        android:text="@string/psi" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_tyre_pressure_fr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_psi_3"
+                        android:layout_alignBottom="@+id/text_view_psi_3"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_tyre_pressure_fr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_tyre_pressure_fr"
+                        android:layout_alignTop="@id/progress_bar_tyre_pressure_fr"
+                        android:layout_alignEnd="@id/progress_bar_tyre_pressure_fr"
+                        android:layout_alignBottom="@id/progress_bar_tyre_pressure_fr" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_3"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_psi_3"
+                        android:text="@string/toe" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_toe_fr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_toe_3"
+                        android:layout_alignBottom="@+id/text_view_toe_3"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_fr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_toe_fr"
+                        android:layout_alignTop="@id/progress_bar_toe_fr"
+                        android:layout_alignEnd="@id/progress_bar_toe_fr"
+                        android:layout_alignBottom="@id/progress_bar_toe_fr" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_3"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_toe_3"
+                        android:text="@string/camber" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_camber_fr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_camber_3"
+                        android:layout_alignBottom="@+id/text_view_camber_3"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_fr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_camber_fr"
+                        android:layout_alignTop="@id/progress_bar_camber_fr"
+                        android:layout_alignEnd="@id/progress_bar_camber_fr"
+                        android:layout_alignBottom="@id/progress_bar_camber_fr" />
+
+                    <TextView
+                        android:id="@+id/text_view_caster_3"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_camber_3"
+                        android:text="@string/caster" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_caster_fr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_caster_3"
+                        android:layout_alignBottom="@+id/text_view_caster_3"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_caster_fr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_caster_fr"
+                        android:layout_alignTop="@id/progress_bar_caster_fr"
+                        android:layout_alignEnd="@id/progress_bar_caster_fr"
+                        android:layout_alignBottom="@id/progress_bar_caster_fr" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_left_rear"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_left_rear"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_left_rear"
+                        android:layout_alignTop="@+id/view_left_rear"
+                        android:layout_alignEnd="@+id/view_left_rear"
+                        android:layout_alignBottom="@+id/view_left_rear"
+                        android:text="@string/left_rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_psi_2"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_left_rear"
+                        android:text="@string/psi" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_tyre_pressure_rl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_psi_2"
+                        android:layout_alignBottom="@+id/text_view_psi_2"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_tyre_pressure_rl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_tyre_pressure_rl"
+                        android:layout_alignTop="@id/progress_bar_tyre_pressure_rl"
+                        android:layout_alignEnd="@id/progress_bar_tyre_pressure_rl"
+                        android:layout_alignBottom="@id/progress_bar_tyre_pressure_rl" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_2"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_psi_2"
+                        android:text="@string/toe" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_toe_rl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_toe_2"
+                        android:layout_alignBottom="@+id/text_view_toe_2"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_rl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_toe_rl"
+                        android:layout_alignTop="@id/progress_bar_toe_rl"
+                        android:layout_alignEnd="@id/progress_bar_toe_rl"
+                        android:layout_alignBottom="@id/progress_bar_toe_rl" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_2"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_toe_2"
+                        android:text="@string/camber" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_camber_rl"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_camber_2"
+                        android:layout_alignBottom="@+id/text_view_camber_2"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_rl"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_camber_rl"
+                        android:layout_alignTop="@id/progress_bar_camber_rl"
+                        android:layout_alignEnd="@id/progress_bar_camber_rl"
+                        android:layout_alignBottom="@id/progress_bar_camber_rl" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_right_rear"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_view_right_rear"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_right_rear"
+                        android:layout_alignTop="@+id/view_right_rear"
+                        android:layout_alignEnd="@+id/view_right_rear"
+                        android:layout_alignBottom="@+id/view_right_rear"
+                        android:text="@string/right_rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_psi_4"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_right_rear"
+                        android:text="@string/psi" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_tyre_pressure_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_psi_4"
+                        android:layout_alignBottom="@+id/text_view_psi_4"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_tyre_pressure_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_tyre_pressure_rr"
+                        android:layout_alignTop="@id/progress_bar_tyre_pressure_rr"
+                        android:layout_alignEnd="@id/progress_bar_tyre_pressure_rr"
+                        android:layout_alignBottom="@id/progress_bar_tyre_pressure_rr" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_4"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_psi_4"
+                        android:text="@string/toe" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_toe_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_toe_4"
+                        android:layout_alignBottom="@+id/text_view_toe_4"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_toe_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_toe_rr"
+                        android:layout_alignTop="@id/progress_bar_toe_rr"
+                        android:layout_alignEnd="@id/progress_bar_toe_rr"
+                        android:layout_alignBottom="@id/progress_bar_toe_rr" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_4"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_toe_4"
+                        android:text="@string/camber" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar_camber_rr"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_camber_4"
+                        android:layout_alignBottom="@+id/text_view_camber_4"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_camber_rr"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_bar_camber_rr"
+                        android:layout_alignTop="@id/progress_bar_camber_rr"
+                        android:layout_alignEnd="@id/progress_bar_camber_rr"
+                        android:layout_alignBottom="@id/progress_bar_camber_rr" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:id="@+id/view_pub"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black" />
+
+    </RelativeLayout>
+</RelativeLayout>

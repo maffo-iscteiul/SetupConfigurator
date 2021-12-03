@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".view.SetupConfigActivity">
+
+    <Button
+        android:id="@+id/button_setup_reader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="24dp"
+        android:text="@string/setup_reader"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_our_setups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_setup_reader"
+        android:padding="24dp"
+        android:text="Our Setups - Coming Soon"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGrey"
+    tools:context=".view.SetupReaderJsonAeroActivity">
+
+    <ImageView
+        android:id="@+id/image_view_background"
+        style="@style/ImageViewBackground"
+        android:contentDescription="@string/background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <View
+            android:id="@+id/view_title"
+            style="@style/PrimaryTitleView" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            style="@style/PrimaryTitleTextView"
+            android:layout_alignStart="@+id/view_title"
+            android:layout_alignTop="@+id/view_title"
+            android:layout_alignEnd="@+id/view_title"
+            android:layout_alignBottom="@+id/view_title"
+            android:text="@string/aero" />
+
+        <View
+            android:id="@+id/view_arrow_backward"
+            style="@style/ViewArrowBack"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
+        <LinearLayout
+            style="@style/LinearView"
+            android:layout_above="@+id/view_pub"
+            android:layout_below="@+id/view_title"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_front"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_front"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_front"
+                        android:layout_alignTop="@+id/view_front"
+                        android:layout_alignEnd="@+id/view_front"
+                        android:layout_alignBottom="@+id/view_front"
+                        android:text="@string/front" />
+
+                    <TextView
+                        android:id="@+id/text_view_height_rear1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_front"
+                        android:text="@string/ride_height" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_height_rear"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_height_rear1"
+                        android:layout_alignBottom="@+id/text_view_height_rear1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_height_rear"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_height_rear"
+                        android:layout_alignTop="@id/progress_height_rear"
+                        android:layout_alignEnd="@id/progress_height_rear"
+                        android:layout_alignBottom="@id/progress_height_rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_splitter1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_height_rear1"
+                        android:text="@string/splitter" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_splitter"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_splitter1"
+                        android:layout_alignBottom="@+id/text_view_splitter1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_splitter"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_splitter"
+                        android:layout_alignTop="@id/progress_splitter"
+                        android:layout_alignEnd="@id/progress_splitter"
+                        android:layout_alignBottom="@id/progress_splitter" />
+
+                    <TextView
+                        android:id="@+id/text_view_brake_ducts_rear1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_splitter1"
+                        android:text="@string/brake_ducts" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_brake_ducts_rear"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_brake_ducts_rear1"
+                        android:layout_alignBottom="@+id/text_view_brake_ducts_rear1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_brake_ducts_rear"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_brake_ducts_rear"
+                        android:layout_alignTop="@id/progress_brake_ducts_rear"
+                        android:layout_alignEnd="@id/progress_brake_ducts_rear"
+                        android:layout_alignBottom="@id/progress_brake_ducts_rear" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/square_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_rear"
+                        style="@style/SecondTitleView"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp" />
+
+                    <TextView
+                        android:id="@+id/text_rear"
+                        style="@style/SecondTitleTextView"
+
+                        android:layout_alignStart="@+id/view_rear"
+                        android:layout_alignTop="@+id/view_rear"
+                        android:layout_alignEnd="@+id/view_rear"
+                        android:layout_alignBottom="@+id/view_rear"
+                        android:text="@string/rear" />
+
+                    <TextView
+                        android:id="@+id/text_view_height_front1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_rear"
+                        android:text="@string/ride_height" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_height_front"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_height_front1"
+                        android:layout_alignBottom="@+id/text_view_height_front1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_height_front"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_height_front"
+                        android:layout_alignTop="@id/progress_height_front"
+                        android:layout_alignEnd="@id/progress_height_front"
+                        android:layout_alignBottom="@id/progress_height_front" />
+
+                    <TextView
+                        android:id="@+id/text_view_wing1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_height_front1"
+                        android:text="@string/wing" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_wing"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_wing1"
+                        android:layout_alignBottom="@+id/text_view_wing1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_wing"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_wing"
+                        android:layout_alignTop="@id/progress_wing"
+                        android:layout_alignEnd="@id/progress_wing"
+                        android:layout_alignBottom="@id/progress_wing" />
+
+                    <TextView
+                        android:id="@+id/text_view_brake_ducts_front1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_wing1"
+                        android:text="@string/brake_ducts" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_brake_ducts_front"
+                        style="@style/ProgressBar"
+                        android:layout_alignTop="@+id/text_view_brake_ducts_front1"
+                        android:layout_alignBottom="@+id/text_view_brake_ducts_front1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_brake_ducts_front"
+                        style="@style/TextViewProgressBar"
+                        android:layout_alignStart="@id/progress_brake_ducts_front"
+                        android:layout_alignTop="@id/progress_brake_ducts_front"
+                        android:layout_alignEnd="@id/progress_brake_ducts_front"
+                        android:layout_alignBottom="@id/progress_brake_ducts_front" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_pub"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

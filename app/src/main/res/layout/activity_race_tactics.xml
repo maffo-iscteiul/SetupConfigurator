@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".view.RaceTacticsActivity">
+
+    <Button
+        android:id="@+id/button_fuel_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="24dp"
+        android:text="@string/fuel_calculator"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_race_strategy"
+        android:layout_below="@+id/button_fuel_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:text="Race Strategy - Coming Soon"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+</RelativeLayout>
