@@ -11,6 +11,12 @@ import com.acc.constant.Constants;
 import com.acc.shared.SecurityPreferences;
 import com.acc.databinding.ActivitySetupReaderJsonTyresBinding;
 import com.acc.shared.SharedActivity;
+import com.google.firebase.perf.metrics.AddTrace;
+import com.google.firebase.perf.FirebasePerformance;
+import com.google.firebase.perf.metrics.Trace;
+
+import java.util.Map;
+
 
 public class SetupReaderJsonTyresActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +28,7 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
 
 
     @Override
+    @AddTrace(name = "onCreateTrace")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySetupReaderJsonTyresBinding.inflate(getLayoutInflater());
@@ -30,6 +37,14 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
         this.mSecurityPreferences = new SecurityPreferences(this);
 
         this.mSharedActivity = new SharedActivity(this);
+
+        //Trace trace = FirebasePerformance.getInstance().newTrace("test_trace");
+
+        //trace.start();
+            //do_something_code
+        //trace.stop();
+
+
     }
 
     @Override
