@@ -51,14 +51,8 @@ public class FuelCalculatorActivity extends AppCompatActivity implements View.On
         Double lapTimeSeconds = Double.valueOf(binding.editLapTimeSeconds.getText().toString());
         Double stintLengthMinutes = Double.valueOf(binding.editStingLengthMinutes.getText().toString());
         Double litresPerLap = Double.valueOf(binding.editLitresPerLapLitres.getText().toString());
-        //asdasd
         Double extraLitres = 0.0;
-        Double extraLitr2es = 0.0;
-        //asdfasdasd
-        //asdfasdasd
-        //asdfasdasd
-        //asdfasdasd
-        //asdfasdasd
+
         if (binding.checkboxFormationOnLap.isChecked()) {
             extraLitres = litresPerLap;
         }
