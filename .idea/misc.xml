@@ -34,6 +34,9 @@
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfigurator/app/src/main/res/layout/list.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfigurator/app/src/main/res/layout/list_item.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfigurator/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21770833333333334" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_electronics.xml" value="0.75" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_mechanical.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_tyres.xml" value="0.1" />
         <entry key="..\:/Users/Marco Franco/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/progress_horizontal.xml" value="0.2421875" />
         <entry key="..\:/Users/Marco Franco/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.20572916666666666" />
       </map>
@@ -44,5 +47,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
