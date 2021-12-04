@@ -8,18 +8,14 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.acc.constant.Constants;
-import com.acc.shared.SecurityPreferences;
 import com.acc.databinding.ActivitySetupReaderJsonTyresBinding;
+import com.acc.shared.SecurityPreferences;
 import com.acc.shared.SharedActivity;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.perf.metrics.AddTrace;
-import com.google.firebase.perf.FirebasePerformance;
-import com.google.firebase.perf.metrics.Trace;
-
-import java.util.Map;
 
 
 public class SetupReaderJsonTyresActivity extends AppCompatActivity implements View.OnClickListener {
@@ -32,7 +28,7 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
 
 
     @Override
-    @AddTrace(name = "onCreateTrace")
+    @AddTrace(name = "onCreateSetupReaderJsonTyresActivity")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySetupReaderJsonTyresBinding.inflate(getLayoutInflater());
@@ -55,7 +51,7 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
         //Trace trace = FirebasePerformance.getInstance().newTrace("test_trace");
 
         //trace.start();
-            //do_something_code
+        //do_something_code
         //trace.stop();
 
 
@@ -76,6 +72,7 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
         binding = null;
     }
 
+    @AddTrace(name = "loadTyresDataToActivity")
     private void loadDataToActivity() {
         //Loads the 1st values to this activity
         // Gets the values from mSecurityPreferences

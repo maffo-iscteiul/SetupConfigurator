@@ -3,6 +3,8 @@ package com.acc.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
@@ -19,11 +21,14 @@ import com.acc.databinding.ActivitySetupReaderBinding;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SetupReaderActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final String LOG_TAG = "SetupReader";
     private final List<String> folderList = new ArrayList<>();
+    private ArrayAdapter<String> directoryList;
     private ActivitySetupReaderBinding binding;
     private long mLastClickTime = 0;
     private Toast mToast;
@@ -37,16 +42,36 @@ public class SetupReaderActivity extends AppCompatActivity implements AdapterVie
 
         this.mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 
-        File root = new File(String.valueOf(Environment.getExternalStorageDirectory()));
-        listFolders(root);
+        directoryList = new ArrayAdapter<>(this, R.layout.list_files, folderList);
+        binding.listFolders.setAdapter(directoryList);
 
-        if (folderList.isEmpty()) {
-            this.showToast("Não foi encontrado nenhuns ficheiros JSON");
-        } else {
-            ArrayAdapter<String> directoryList = new ArrayAdapter<>(this, R.layout.list_files, folderList);
-            binding.listFolders.setAdapter(directoryList);
+        Handler handler = new Handler(Looper.getMainLooper());
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        binding.progressbarView.setVisibility(View.VISIBLE);
+        binding.listFolders.setVisibility(View.GONE);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                File root = new File(String.valueOf(Environment.getExternalStorageDirectory()));
+                listFolders(root);
+                if (folderList.isEmpty()) {
+                    showToast("Não foi encontrado nenhumas pastas!");
+                    finish();
+                }
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.progressbarView.setVisibility(View.GONE);
+                        binding.listFolders.setVisibility(View.VISIBLE);
+                        directoryList.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
+
+        if (!isFinishing()) {
+            binding.listFolders.setOnItemClickListener(this);
         }
-        binding.listFolders.setOnItemClickListener(this);
     }
 
     private void listFolders(File directory) {
