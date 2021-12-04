@@ -11,6 +11,10 @@ import com.acc.constant.Constants;
 import com.acc.shared.SecurityPreferences;
 import com.acc.databinding.ActivitySetupReaderJsonTyresBinding;
 import com.acc.shared.SharedActivity;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.perf.metrics.AddTrace;
 import com.google.firebase.perf.FirebasePerformance;
 import com.google.firebase.perf.metrics.Trace;
@@ -37,6 +41,16 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
         this.mSecurityPreferences = new SecurityPreferences(this);
 
         this.mSharedActivity = new SharedActivity(this);
+
+        MobileAds.initialize(this,
+                new OnInitializationCompleteListener() {
+                    @Override
+                    public void onInitializationComplete(InitializationStatus initializationStatus) {
+                    }
+                });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adViewPub.loadAd(adRequest);
 
         //Trace trace = FirebasePerformance.getInstance().newTrace("test_trace");
 
