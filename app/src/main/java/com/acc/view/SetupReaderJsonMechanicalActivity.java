@@ -86,7 +86,7 @@ public class SetupReaderJsonMechanicalActivity extends AppCompatActivity impleme
                 binding.progressBrakeTorque, binding.textViewBrakeTorque, 0);
 
         this.mSharedActivity.setTrueValuesToActivity(Constants.BRAKE_BIAS_MAX, Constants.BRAKE_BIAS_MIN,
-                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BRAKE_BIAS)) / 10,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BRAKE_BIAS)) / 10 * 2,
                 binding.progressBrakeBias, binding.textViewBrakeBias, 1);
 
         this.mSharedActivity.setTrueValuesToActivity(Constants.STEER_RATIO_MAX, Constants.STEER_RATIO_MIN,

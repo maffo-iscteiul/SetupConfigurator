@@ -31,9 +31,7 @@ public class SharedActivity {
         Log.e(LOG_TAG, background);
         Log.e(LOG_TAG, String.valueOf(imageResource));
         if (imageResource != 0) {
-            //Descomentar esta parte depois
-            //imageViewBackground.setImageResource(imageResource);
-            imageViewBackground.setImageResource(R.drawable.m6_gt3);
+            imageViewBackground.setImageResource(imageResource);
         } else {
             Log.e(LOG_TAG, String.valueOf(imageResource));
             Log.e(LOG_TAG, "There isn't any image for this ID");

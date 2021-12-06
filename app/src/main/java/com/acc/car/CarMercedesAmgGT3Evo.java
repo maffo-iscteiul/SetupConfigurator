@@ -54,6 +54,8 @@ public class CarMercedesAmgGT3Evo implements AbstractCarConstants {
     private static final Float RIDE_HEIGHT_FRONT_MAX = 80F;
     private static final Float RIDE_HEIGHT_REAR_MIN = 55F;
     private static final Float RIDE_HEIGHT_REAR_MAX = 90F;
+    private static final Float REAR_WING_MIN = 0F;
+    private static final Float REAR_WING_MAX = 10F;
 
 
     public CarMercedesAmgGT3Evo() {
@@ -99,5 +101,7 @@ public class CarMercedesAmgGT3Evo implements AbstractCarConstants {
         Constants.RIDE_HEIGHT_FRONT_MAX = RIDE_HEIGHT_FRONT_MAX;
         Constants.RIDE_HEIGHT_REAR_MIN = RIDE_HEIGHT_REAR_MIN;
         Constants.RIDE_HEIGHT_REAR_MAX = RIDE_HEIGHT_REAR_MAX;
+        Constants.REAR_WING_MIN = REAR_WING_MIN;
+        Constants.REAR_WING_MAX = REAR_WING_MAX;
     }
 }

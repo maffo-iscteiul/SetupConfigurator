@@ -1,7 +1,6 @@
 package com.acc.constant;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Constants {
@@ -66,12 +65,12 @@ public class Constants {
     public static Float STEER_RATIO_MAX = 0.0F;
     public static Float WHEEL_RATE_FRONT_MIN = 0.0F;
     public static Float WHEEL_RATE_FRONT_MAX = 0.0F;
-    public static List<Float> WHEEL_RATE_FRONT_ITERATE_LIST = new ArrayList<Float>();
+    public static List<Float> WHEEL_RATE_FRONT_ITERATE_LIST = new ArrayList<>();
     public static Float BUMPSTOP_RANGE_FRONT_MIN = 0.0F;
     public static Float BUMPSTOP_RANGE_FRONT_MAX = 0.0F;
     public static Float WHEEL_RATE_REAR_MIN = 0.0F;
     public static Float WHEEL_RATE_REAR_MAX = 0.0F;
-    public static List<Float> WHEEL_RATE_REAR_ITERATE_LIST = new ArrayList<Float>();
+    public static List<Float> WHEEL_RATE_REAR_ITERATE_LIST = new ArrayList<>();
     public static Float BUMPSTOP_RANGE_REAR_MIN = 0.0F;
     public static Float BUMPSTOP_RANGE_REAR_MAX = 0.0F;
     public static Float ANTIROLL_BAR_REAR_MIN = 0.0F;
@@ -80,6 +79,10 @@ public class Constants {
     public static Float RIDE_HEIGHT_FRONT_MAX = 0.0F;
     public static Float RIDE_HEIGHT_REAR_MIN = 0.0F;
     public static Float RIDE_HEIGHT_REAR_MAX = 0.0F;
+    public static Float REAR_WING_MIN = 0.0F;
+    public static Float REAR_WING_MAX = 0.0F;
+    public static Float SPLITTER_MIN = 1.0F;
+    public static Float SPLITTER_MAX = 11.0F;
 
     public final static String FILE_PATH = "FILE_PATH";
     public final static String CAR_NAME = "CAR_NAME";

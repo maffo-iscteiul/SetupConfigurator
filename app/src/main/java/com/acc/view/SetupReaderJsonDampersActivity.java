@@ -56,9 +56,69 @@ public class SetupReaderJsonDampersActivity extends AppCompatActivity implements
         this.mSharedActivity.setBackgroundImageByCar(mSecurityPreferences.getStoredString(Constants.CAR_NAME), binding.imageViewBackground);
 
         //Load Values
-        this.mSharedActivity.setTrueValuesToActivity(Constants.TC_MAX, Constants.TC_MIN,
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMP_STOP_MAX, Constants.BUMP_STOP_MIN,
                 Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FL)),
                 binding.progressBarBumpLf, binding.textViewBumpLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMP_STOP_MAX, Constants.BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FR)),
+                binding.progressBarBumpRf, binding.textViewBumpRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMP_STOP_MAX, Constants.BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_RL)),
+                binding.progressBarBumpLr, binding.textViewBumpLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMP_STOP_MAX, Constants.BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_RR)),
+                binding.progressBarBumpRr, binding.textViewBumpRr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_BUMP_STOP_MAX, Constants.FAST_BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FAST_FL)),
+                binding.progressBarFastBumpLf, binding.textViewFastBumpLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_BUMP_STOP_MAX, Constants.FAST_BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FAST_FR)),
+                binding.progressBarFastBumpRf, binding.textViewFastBumpRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_BUMP_STOP_MAX, Constants.FAST_BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FAST_RL)),
+                binding.progressBarFastBumpLr, binding.textViewFastBumpLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_BUMP_STOP_MAX, Constants.FAST_BUMP_STOP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_FAST_RR)),
+                binding.progressBarFastBumpRr, binding.textViewFastBumpRr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.REBOUND_MAX, Constants.REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FL)),
+                binding.progressBarReboundLf, binding.textViewReboundLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.REBOUND_MAX, Constants.REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FR)),
+                binding.progressBarReboundRf, binding.textViewReboundRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.REBOUND_MAX, Constants.REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_RL)),
+                binding.progressBarReboundLr, binding.textViewReboundLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.REBOUND_MAX, Constants.REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_RR)),
+                binding.progressBarReboundRr, binding.textViewReboundRr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_REBOUND_MAX, Constants.FAST_REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FAST_FL)),
+                binding.progressBarFastReboundLf, binding.textViewFastReboundLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_REBOUND_MAX, Constants.FAST_REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FAST_FR)),
+                binding.progressBarFastReboundRf, binding.textViewFastReboundRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_REBOUND_MAX, Constants.FAST_REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FAST_RL)),
+                binding.progressBarFastReboundLr, binding.textViewFastReboundLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.FAST_REBOUND_MAX, Constants.FAST_REBOUND_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REBOUND_FAST_RR)),
+                binding.progressBarFastReboundRr, binding.textViewFastReboundRr, 0);
 
     }
 

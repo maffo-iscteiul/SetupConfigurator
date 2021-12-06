@@ -64,10 +64,29 @@ public class SetupReaderJsonAeroActivity extends AppCompatActivity implements Vi
         this.mSharedActivity.setBackgroundImageByCar(mSecurityPreferences.getStoredString(Constants.CAR_NAME), binding.imageViewBackground);
 
         //Falta o load para a atividade!
-        this.mSharedActivity.setTrueValuesToActivity(Constants.TC_MAX, Constants.TC_MIN,
+        this.mSharedActivity.setTrueValuesToActivity(Constants.RIDE_HEIGHT_FRONT_MAX, Constants.RIDE_HEIGHT_FRONT_MIN,
                 Float.valueOf(mSecurityPreferences.getStoredString(Constants.RIDE_HEIGHT_FRONT)),
                 binding.progressHeightFront, binding.textViewHeightFront, 0);
 
+        this.mSharedActivity.setTrueValuesToActivity(Constants.RIDE_HEIGHT_REAR_MAX, Constants.RIDE_HEIGHT_REAR_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.RIDE_HEIGHT_REAR)),
+                binding.progressHeightRear, binding.textViewHeightRear, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BRAKE_DUCTS_MAX, Constants.BRAKE_DUCTS_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BRAKE_DUCT_FRONT)),
+                binding.progressBrakeDuctsFront, binding.textViewBrakeDuctsFront, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BRAKE_DUCTS_MAX, Constants.BRAKE_DUCTS_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BRAKE_DUCT_REAR)),
+                binding.progressBrakeDuctsRear, binding.textViewBrakeDuctsRear, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.SPLITTER_MAX, Constants.SPLITTER_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.SPLITTER)),
+                binding.progressSplitter, binding.textViewSplitter, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.REAR_WING_MAX, Constants.REAR_WING_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.REAR_WING)),
+                binding.progressWing, binding.textViewWing, 0);
     }
 
 
