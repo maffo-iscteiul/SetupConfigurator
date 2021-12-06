@@ -1,27 +1,85 @@
 package com.acc.constant;
 
-public class Constants {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public static final Float TYRE_PRESSURE_MAX = 40.0F;
+public class Constants {
+    public static final String CAR_NAME_MERCEDES_AMG_GT3_EVO = "mercedes_amg_gt3_evo";
+
+    public static final Float TYRE_PRESSURE_MAX = 35.0F;
     public static final Float TYRE_PRESSURE_MIN = 20.3F;
 
-    public static final Float TOE_MAX = 0.40F;
-    public static final Float TOE_MIN = -0.40F;
+    public static final Float CAMBER_FRONT_MAX = -1.5F;
+    public static final Float CAMBER_FRONT_MIN = -4.0F;
 
-    public static final Float CASTER_MAX = 18.0F;
-    public static final Float CASTER_MIN = 6.0F;
-
-    public static final Float CAMBER_MAX = 18.0F;
-    public static final Float CAMBER_MIN = 0.0F;
+    public static final Float CAMBER_REAR_MAX = -1.0F;
+    public static final Float CAMBER_REAR_MIN = -3.5F;
 
     public static final Float TC_MAX = 18.0F;
     public static final Float TC_MIN = 0.0F;
 
-    public static final Float ABS_MAX = 18.0F;
-    public static final Float ABS_MIN = 0.0F;
+    public static final Float BRAKE_POWER_MAX = 100F;
+    public static final Float BRAKE_POWER_MIN = 80F;
 
-    public static final Float ECU_MAP_MAX = 18.0F;
-    public static final Float ECU_MAP_MIN = 0.0F;
+    public static final Float BUMPSTOP_RATE_MIN = 300F;
+    public static final Float BUMPSTOP_RATE_MAX = 2500F;
+
+    public static final Float PRELOAD_DIFFERENTIAL_MIN = 20F;
+    public static final Float PRELOAD_DIFFERENTIAL_MAX = 300F;
+
+    public static final Float BUMP_STOP_MIN = 0F;
+    public static final Float BUMP_STOP_MAX = 40F;
+
+    public static final Float FAST_BUMP_STOP_MIN = 0F;
+    public static final Float FAST_BUMP_STOP_MAX = 49F;
+
+    public static final Float REBOUND_MIN = 0F;
+    public static final Float REBOUND_MAX = 40F;
+
+    public static final Float FAST_REBOUND_MIN = 0F;
+    public static final Float FAST_REBOUND_MAX = 49F;
+
+    public static final Float BRAKE_DUCTS_MIN = 0F;
+    public static final Float BRAKE_DUCTS_MAX = 6F;
+
+    public static String REAL_CAR_NAME = "";
+    public static Float TOE_FRONT_MAX = 0.0F;
+    public static Float TOE_REAR_MAX = 0.0F;
+    public static Float TOE_FRONT_MIN = 0.00F;
+    public static Float TOE_REAR_MIN = 0.00F;
+    public static Float CASTER_MAX = 0.0F;
+    public static Float CASTER_MIN = 0.0F;
+    public static Float TC1_MIN = 0.0F;
+    public static Float TC1_MAX = 0.0F;
+    public static Float ABS_MIN = 0.0F;
+    public static Float ABS_MAX = 0.0F;
+    public static Float ECU_MAP_MIN = 0.0F;
+    public static Float ECU_MAP_MAX = 0.0F;
+    public static Float TC2_MIN = 0.0F;
+    public static Float TC2_MAX = 0.0F;
+    public static Float ANTIROLL_BAR_FRONT_MIN = 0.0F;
+    public static Float ANTIROLL_BAR_FRONT_MAX = 0.0F;
+    public static Float BRAKE_BIAS_MIN = 0.0F;
+    public static Float BRAKE_BIAS_MAX = 0.0F;
+    public static Float STEER_RATIO_MIN = 0.0F;
+    public static Float STEER_RATIO_MAX = 0.0F;
+    public static Float WHEEL_RATE_FRONT_MIN = 0.0F;
+    public static Float WHEEL_RATE_FRONT_MAX = 0.0F;
+    public static List<Float> WHEEL_RATE_FRONT_ITERATE_LIST = new ArrayList<Float>();
+    public static Float BUMPSTOP_RANGE_FRONT_MIN = 0.0F;
+    public static Float BUMPSTOP_RANGE_FRONT_MAX = 0.0F;
+    public static Float WHEEL_RATE_REAR_MIN = 0.0F;
+    public static Float WHEEL_RATE_REAR_MAX = 0.0F;
+    public static List<Float> WHEEL_RATE_REAR_ITERATE_LIST = new ArrayList<Float>();
+    public static Float BUMPSTOP_RANGE_REAR_MIN = 0.0F;
+    public static Float BUMPSTOP_RANGE_REAR_MAX = 0.0F;
+    public static Float ANTIROLL_BAR_REAR_MIN = 0.0F;
+    public static Float ANTIROLL_BAR_REAR_MAX = 0.0F;
+    public static Float RIDE_HEIGHT_FRONT_MIN = 0.0F;
+    public static Float RIDE_HEIGHT_FRONT_MAX = 0.0F;
+    public static Float RIDE_HEIGHT_REAR_MIN = 0.0F;
+    public static Float RIDE_HEIGHT_REAR_MAX = 0.0F;
 
     public final static String FILE_PATH = "FILE_PATH";
     public final static String CAR_NAME = "CAR_NAME";

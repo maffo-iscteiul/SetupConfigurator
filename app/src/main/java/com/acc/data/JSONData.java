@@ -2,6 +2,7 @@ package com.acc.data;
 
 import android.util.Log;
 
+import com.acc.car.CarMercedesAmgGT3Evo;
 import com.acc.constant.Constants;
 
 import org.json.JSONArray;
@@ -35,7 +36,7 @@ public class JSONData {
             bufferedReader.close();
 
             String response = stringBuilder.toString();
-            Log.e(LOG_TAG, response);
+            //Log.e(LOG_TAG, response);
 
             JSONObject obj = new JSONObject(response);
 
@@ -201,6 +202,10 @@ public class JSONData {
             String rearWing = aeroBalance.get("rearWing").toString();
             String splitter = aeroBalance.get("splitter").toString();
 
+            // Validate and load properties by car
+
+            validateAndLoadConstantsByCar(carName);
+
             this.mJSONData.put(Constants.CAR_NAME, carName);
             this.mJSONData.put(Constants.TYRE_COMPOUND, tyreCompound);
             this.mJSONData.put(Constants.TYRE_PRESSURE_FL, tyrePressureFL);
@@ -271,6 +276,15 @@ public class JSONData {
         } catch (NumberFormatException | NullPointerException e) {
             throw new NumberFormatException("Something inside JSON Data are not OK!");
 
+        }
+    }
+
+    private void validateAndLoadConstantsByCar(String carName) throws NullPointerException {
+        if (carName.equals(Constants.CAR_NAME_MERCEDES_AMG_GT3_EVO)) {
+            new CarMercedesAmgGT3Evo();
+        } else {
+            // Doesn't exist so should be an error!
+            throw new NullPointerException("Car name doesn't exist!");
         }
     }
 }

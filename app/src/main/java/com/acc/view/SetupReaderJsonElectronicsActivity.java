@@ -73,8 +73,20 @@ public class SetupReaderJsonElectronicsActivity extends AppCompatActivity implem
 
         //Load Values
         this.mSharedActivity.setTrueValuesToActivity(Constants.TC_MAX, Constants.TC_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.TC1)),
+                binding.progressTc1, binding.textViewTc1, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.ABS_MAX, Constants.ABS_MIN,
                 Float.valueOf(mSecurityPreferences.getStoredString(Constants.ABS)),
                 binding.progressAbs, binding.textViewAbs, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.ECU_MAP_MAX, Constants.ECU_MAP_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.ECU_MAP)),
+                binding.progressEcuMap, binding.textViewEcuMap, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.TC2_MAX, Constants.TC2_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.TC2)),
+                binding.progressTc2, binding.textViewTc2, 0);
 
     }
 

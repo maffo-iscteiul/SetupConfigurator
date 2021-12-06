@@ -37,8 +37,9 @@
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_files.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_electronics.xml" value="0.75" />
-        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_mechanical.xml" value="0.12771739130434784" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_dampers.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_electronics.xml" value="0.22" />
+        <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_mechanical.xml" value="0.33" />
         <entry key="..\:/Users/Marco Franco/AndroidStudioProjects/SetupConfiguratorGit/app/src/main/res/layout/activity_setup_reader_json_tyres.xml" value="0.25" />
         <entry key="..\:/Users/Marco Franco/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/progress_horizontal.xml" value="0.2421875" />
         <entry key="..\:/Users/Marco Franco/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.20572916666666666" />
