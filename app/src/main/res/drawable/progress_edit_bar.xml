@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@android:id/background"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape
+            android:shape="rectangle">
+            <!--<corners android:radius="3dp"/>-->
+            <size android:height="20dp" />
+            <solid android:color="@color/backgroundProgressBar" />
+            <stroke android:color="@color/light_grey" android:width="2dp" />
+        </shape>
+    </item>
+</layer-list>

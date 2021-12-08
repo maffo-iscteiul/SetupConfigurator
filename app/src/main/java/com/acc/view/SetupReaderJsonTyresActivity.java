@@ -63,6 +63,7 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
         if (!this.isFinishing()) {
             loadDataToActivity();
             binding.viewArrowForward.setOnClickListener(this);
+            binding.viewArrowBackward.setOnClickListener(this);
         }
     }
 
@@ -148,6 +149,10 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
             mLastClickTime = SystemClock.elapsedRealtime();
             Intent intent = new Intent(this, SetupReaderJsonElectronicsActivity.class);
             startActivity(intent);
+        }
+        if (view.getId() == binding.viewArrowBackward.getId()) {
+            mLastClickTime = SystemClock.elapsedRealtime();
+            this.finish();
         }
     }
 }

@@ -84,6 +84,8 @@ public class Constants {
     public static Float SPLITTER_MIN = 1.0F;
     public static Float SPLITTER_MAX = 11.0F;
 
+    public static final String RISKY_FUEL = "RISKY_FUEL";
+    public static final String SAFE_FUEL = "SAFE_FUEL";
     public final static String FILE_PATH = "FILE_PATH";
     public final static String CAR_NAME = "CAR_NAME";
     public final static String TYRE_COMPOUND = "TYRE_COMPOUND";

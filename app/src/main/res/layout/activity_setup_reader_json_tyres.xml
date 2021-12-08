@@ -35,6 +35,12 @@
             android:layout_alignTop="@+id/text_view_title"
             android:layout_alignBottom="@+id/text_view_title" />
 
+        <View
+            android:id="@+id/view_arrow_backward"
+            style="@style/ViewArrowBack"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
         <ScrollView
             style="@style/ScrollView"
             android:layout_above="@+id/adView_pub"
