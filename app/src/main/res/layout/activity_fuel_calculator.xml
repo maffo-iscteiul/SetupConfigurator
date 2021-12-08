@@ -98,10 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_sting_length_minutes"
         android:layout_toStartOf="@+id/text_litres_per_lap_litres"
-        android:gravity="center"
-        android:inputType="numberDecimal"
         android:digits="0123456789."
-        />
+        android:gravity="center"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/text_litres_per_lap_litres"

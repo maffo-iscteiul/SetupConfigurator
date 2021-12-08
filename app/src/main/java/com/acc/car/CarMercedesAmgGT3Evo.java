@@ -14,48 +14,56 @@ public class CarMercedesAmgGT3Evo implements AbstractCarConstants {
     private static final Float TOE_FRONT_MAX = 0.40F;
     private static final Float TOE_REAR_MAX = 0.40F;
     private static final Float TOE_REAR_MIN = -0.40F;
-    private static final Float CASTER_MIN = 10.7F;
-    private static final Float CASTER_MAX = 16.1F;
+    private static final Float CASTER_MIN = 6.0F;
+    private static final Float CASTER_MAX = 14.1F;
     private static final Float TC1_MIN = 0F;
-    private static final Float TC1_MAX = 8F;
+    private static final Float TC1_MAX = 11F;
     private static final Float ABS_MIN = 0F;
-    private static final Float ABS_MAX = 11F;
+    private static final Float ABS_MAX = 10F;
     private static final Float ECU_MAP_MIN = 1F;
-    private static final Float ECU_MAP_MAX = 8F;
+    private static final Float ECU_MAP_MAX = 3F;
     private static final Float TC2_MIN = 0F;
-    private static final Float TC2_MAX = 8F;
+    private static final Float TC2_MAX = 0F;
     private static final Float ANTIROLL_BAR_FRONT_MIN = 0F;
-    private static final Float ANTIROLL_BAR_FRONT_MAX = 8F;
-    private static final Float BRAKE_BIAS_MIN = 57.0F;
-    private static final Float BRAKE_BIAS_MAX = 78.0F;
-    private static final Float STEER_RATIO_MIN = 14F;
-    private static final Float STEER_RATIO_MAX = 18F;
-    private static final Float WHEEL_RATE_FRONT_MIN = 115000F;
-    private static final Float WHEEL_RATE_FRONT_MAX = 185000F;
+    private static final Float ANTIROLL_BAR_FRONT_MAX = 11F;
+    private static final Float BRAKE_BIAS_MIN = 50.0F;
+    private static final Float BRAKE_BIAS_MAX = 71.0F;
+    private static final Float STEER_RATIO_MIN = 11F;
+    private static final Float STEER_RATIO_MAX = 17F;
+    private static final Float WHEEL_RATE_FRONT_MIN = 130000F;
+    private static final Float WHEEL_RATE_FRONT_MAX = 202000F;
     // LIST OF THE NUMBER OF WHAT CLICK REPRESENT IN WHEEL_RATE_NUMBERS - DIFFERENCE THE WHEEL RATE PER CLICK
     private static final List<Float> WHEEL_RATE_FRONT_ITERATE_LIST = new ArrayList<Float>() {{
-        add(1000F);
-        add(20000F);
+        add(130000F);
+        add(143000F);
+        add(155000F);
+        add(171000F);
+        add(187000F);
+        add(202000F);
     }};
     private static final Float BUMPSTOP_RANGE_FRONT_MIN = 0F;
-    private static final Float BUMPSTOP_RANGE_FRONT_MAX = 23F;
-    private static final Float WHEEL_RATE_REAR_MIN = 105000F;
-    private static final Float WHEEL_RATE_REAR_MAX = 195000F;
+    private static final Float BUMPSTOP_RANGE_FRONT_MAX = 31F;
+    private static final Float WHEEL_RATE_REAR_MIN = 71000F;
+    private static final Float WHEEL_RATE_REAR_MAX = 131000F;
     // LIST OF THE NUMBER OF WHAT CLICK REPRESENT IN WHEEL_RATE_NUMBERS - DIFFERENCE THE WHEEL RATE PER CLICK
     private static final List<Float> WHEEL_RATE_REAR_ITERATE_LIST = new ArrayList<Float>() {{
-        add(1000F);
-        add(20000F);
+        add(71000F);
+        add(83000F);
+        add(95000F);
+        add(107000F);
+        add(119000F);
+        add(131000F);
     }};
     private static final Float BUMPSTOP_RANGE_REAR_MIN = 0F;
-    private static final Float BUMPSTOP_RANGE_REAR_MAX = 68F;
+    private static final Float BUMPSTOP_RANGE_REAR_MAX = 72F;
     private static final Float ANTIROLL_BAR_REAR_MIN = 0F;
-    private static final Float ANTIROLL_BAR_REAR_MAX = 8F;
-    private static final Float RIDE_HEIGHT_FRONT_MIN = 55F;
+    private static final Float ANTIROLL_BAR_REAR_MAX = 7F;
+    private static final Float RIDE_HEIGHT_FRONT_MIN = 42F;
     private static final Float RIDE_HEIGHT_FRONT_MAX = 80F;
-    private static final Float RIDE_HEIGHT_REAR_MIN = 55F;
+    private static final Float RIDE_HEIGHT_REAR_MIN = 67F;
     private static final Float RIDE_HEIGHT_REAR_MAX = 90F;
     private static final Float REAR_WING_MIN = 0F;
-    private static final Float REAR_WING_MAX = 10F;
+    private static final Float REAR_WING_MAX = 11F;
 
 
     public CarMercedesAmgGT3Evo() {

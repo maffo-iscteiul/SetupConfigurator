@@ -31,6 +31,7 @@ public class SharedActivity {
         Log.e(LOG_TAG, background);
         Log.e(LOG_TAG, String.valueOf(imageResource));
         if (imageResource != 0) {
+            //imageViewBackground.setImageResource(R.drawable.bmw);
             imageViewBackground.setImageResource(imageResource);
         } else {
             Log.e(LOG_TAG, String.valueOf(imageResource));

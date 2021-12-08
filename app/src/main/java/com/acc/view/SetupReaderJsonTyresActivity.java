@@ -76,7 +76,6 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
     private void loadDataToActivity() {
         //Loads the 1st values to this activity
         // Gets the values from mSecurityPreferences
-
         //SET BACKGROUND IMAGE FROM JSON CAR
         this.mSharedActivity.setBackgroundImageByCar(mSecurityPreferences.getStoredString(Constants.CAR_NAME), binding.imageViewBackground);
 
@@ -116,11 +115,11 @@ public class SetupReaderJsonTyresActivity extends AppCompatActivity implements V
 
         this.mSharedActivity.setTrueValuesToActivity(Constants.CASTER_MAX, Constants.CASTER_MIN,
                 Float.parseFloat(mSecurityPreferences.getStoredString(Constants.CASTER_FL)) / 10,
-                binding.progressBarCasterFl, binding.textViewCasterFl, 2);
+                binding.progressBarCasterFl, binding.textViewCasterFl, 1);
 
         this.mSharedActivity.setTrueValuesToActivity(Constants.CASTER_MAX, Constants.CASTER_MIN,
                 Float.parseFloat(mSecurityPreferences.getStoredString(Constants.CASTER_FR)) / 10,
-                binding.progressBarCasterFr, binding.textViewCasterFr, 2);
+                binding.progressBarCasterFr, binding.textViewCasterFr, 1);
 
         this.mSharedActivity.setTrueValuesToActivity(Constants.CAMBER_FRONT_MAX, Constants.CAMBER_FRONT_MIN,
                 Float.parseFloat(mSecurityPreferences.getStoredString(Constants.CAMBER_FL)) / 10,
