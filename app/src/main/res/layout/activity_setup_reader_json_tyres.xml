@@ -35,9 +35,15 @@
             android:layout_alignTop="@+id/text_view_title"
             android:layout_alignBottom="@+id/text_view_title" />
 
+        <View
+            android:id="@+id/view_arrow_backward"
+            style="@style/ViewArrowBack"
+            android:layout_alignTop="@+id/text_view_title"
+            android:layout_alignBottom="@+id/text_view_title" />
+
         <ScrollView
             style="@style/ScrollView"
-            android:layout_above="@+id/view_pub"
+            android:layout_above="@+id/adView_pub"
             android:layout_below="@+id/view_title">
 
             <LinearLayout
@@ -50,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -156,7 +162,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -262,7 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -347,7 +353,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -431,12 +437,16 @@
             </LinearLayout>
         </ScrollView>
 
-        <View
-            android:id="@+id/view_pub"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView_pub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:background="@color/black" />
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        </com.google.android.gms.ads.AdView>
 
     </RelativeLayout>
 </RelativeLayout>

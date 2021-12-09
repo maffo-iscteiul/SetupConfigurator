@@ -31,8 +31,8 @@ public class SharedActivity {
         Log.e(LOG_TAG, background);
         Log.e(LOG_TAG, String.valueOf(imageResource));
         if (imageResource != 0) {
-            //imageViewBackground.setImageResource(imageResource);
-            imageViewBackground.setImageResource(R.drawable.m6_gt3);
+            //imageViewBackground.setImageResource(R.drawable.bmw);
+            imageViewBackground.setImageResource(imageResource);
         } else {
             Log.e(LOG_TAG, String.valueOf(imageResource));
             Log.e(LOG_TAG, "There isn't any image for this ID");
@@ -50,13 +50,14 @@ public class SharedActivity {
 
 
         // É PROVÁVEL QUE TENHA SER ADICIONADO UMA PROPRIEDADE DE "STEP" PORQUE HÁ CAMPOS QUE VÃO 0.2 EM 0.2 POR EXEMPLO BRAKE BIAS/POWER
-
+        Log.e(LOG_TAG, String.valueOf(progressBar));
         Float trueValue = getTrueValue(min, value);
         if (isValueValid(max, min, trueValue)) {
             textView.setText(String.format("%." + numberOfDecimals + "f", trueValue.doubleValue()));
             Float trueProgressValue = getProgressTrueValue(max, min, trueValue);
             progressBar.setProgress(trueProgressValue.intValue());
-        } else {
+        }
+        else {
             textView.setText(R.string.error);
             progressBar.setProgress(0);
         }
@@ -65,6 +66,9 @@ public class SharedActivity {
     }
 
     private boolean isValueValid(Float max, Float min, Float value) {
+        Log.e(LOG_TAG, String.valueOf(max));
+        Log.e(LOG_TAG, String.valueOf(min));
+        Log.e(LOG_TAG, String.valueOf(value));
         return value >= min && value <= max;
     }
 

@@ -2,6 +2,8 @@ package com.acc.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.acc.R;
 import com.acc.constant.Constants;
 import com.acc.data.JSONData;
-import com.acc.shared.SecurityPreferences;
 import com.acc.databinding.ActivitySetupReaderFilesBinding;
+import com.acc.shared.SecurityPreferences;
+import com.google.firebase.perf.metrics.AddTrace;
 
 import org.json.JSONException;
 
@@ -26,6 +29,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SetupReaderFilesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -33,6 +38,7 @@ public class SetupReaderFilesActivity extends AppCompatActivity implements Adapt
     private ActivitySetupReaderFilesBinding binding;
     private final List<String> fileListPath = new ArrayList<>();
     private final List<String> fileList = new ArrayList<>();
+    private ArrayAdapter<String> fileArrayList;
     private JSONData mJSONData = new JSONData();
     private long mLastClickTime = 0;
     private SecurityPreferences mSecurityPreferences;
@@ -48,21 +54,37 @@ public class SetupReaderFilesActivity extends AppCompatActivity implements Adapt
         this.mSecurityPreferences = new SecurityPreferences(this);
         this.mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 
-        File folder = new File(this.loadDataFromActivity());
+        fileArrayList = new ArrayAdapter<>(this, R.layout.list_files, fileList);
+        binding.listFiles.setAdapter(fileArrayList);
 
-        Log.e(LOG_TAG, folder.getPath());
-        listFiles(folder);
+        Handler handler = new Handler(Looper.getMainLooper());
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        binding.progressbarView.setVisibility(View.VISIBLE);
+        binding.listFiles.setVisibility(View.GONE);
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                File folder = new File(loadDataFromActivity());
+                listFiles(folder);
+                if (fileList.isEmpty() || fileListPath.isEmpty()) {
+                    showToast("Não foi encontrado nenhuns ficheiros JSON");
+                    finish();
+                }
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.progressbarView.setVisibility(View.GONE);
+                        binding.listFiles.setVisibility(View.VISIBLE);
+                        fileArrayList.notifyDataSetChanged();
+                    }
+                });
+            }
+        });
 
-        if (fileList.isEmpty() || fileListPath.isEmpty()) {
-            this.showToast("Não foi encontrado nenhuns ficheiros JSON");
-            this.finish();
-        } else {
-            ArrayAdapter<String> directoryList = new ArrayAdapter<>(this, R.layout.list_files, fileList);
-            binding.listFiles.setAdapter(directoryList);
-        }
         if (!this.isFinishing()) {
             binding.listFiles.setOnItemClickListener(this);
         }
+
     }
 
     private void showToast(String string) {
@@ -108,6 +130,7 @@ public class SetupReaderFilesActivity extends AppCompatActivity implements Adapt
         }
     }
 
+    @AddTrace(name = "validateJSONFile")
     private boolean validateJSONFile(File file) {
         try {
 
@@ -121,6 +144,7 @@ public class SetupReaderFilesActivity extends AppCompatActivity implements Adapt
         }
     }
 
+    @AddTrace(name = "loadJSONDataToSecurityPreferences")
     private void loadJSONDataToSecurityPreferences(HashMap<String, String> mJSONData) {
         for (Map.Entry<String, String> data : mJSONData.entrySet()) {
             Log.e(LOG_TAG, data.getKey() + " -> " + data.getValue());

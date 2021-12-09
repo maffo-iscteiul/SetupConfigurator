@@ -3,6 +3,7 @@ package com.acc.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -73,13 +74,87 @@ public class SetupReaderJsonMechanicalActivity extends AppCompatActivity impleme
 
         //Falta o load para a atividade!
 
-        this.mSharedActivity.setTrueValuesToActivity(Constants.TC_MAX, Constants.TC_MIN,
-                Float.valueOf(mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_FL)),
+        this.mSharedActivity.setTrueValuesToActivity(Constants.ANTIROLL_BAR_FRONT_MAX, Constants.ANTIROLL_BAR_FRONT_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.ANTIROLL_BAR_FRONT)),
+                binding.progressAntiRollBarFront, binding.textViewAntiRollBarFront, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.ANTIROLL_BAR_REAR_MAX, Constants.ANTIROLL_BAR_REAR_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.ANTIROLL_BAR_REAR)),
+                binding.progressAntiRollBarRear, binding.textViewAntiRollBarRear, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BRAKE_POWER_MAX, Constants.BRAKE_POWER_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BRAKE_TORQUE)),
+                binding.progressBrakeTorque, binding.textViewBrakeTorque, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BRAKE_BIAS_MAX, Constants.BRAKE_BIAS_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BRAKE_BIAS)) / 10 * 2,
+                binding.progressBrakeBias, binding.textViewBrakeBias, 1);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.STEER_RATIO_MAX, Constants.STEER_RATIO_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.STEER_RATIO)),
+                binding.progressSteerRatio, binding.textViewSteerRatio, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.PRELOAD_DIFFERENTIAL_MAX, Constants.PRELOAD_DIFFERENTIAL_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.PRELOAD)) * 10,
+                binding.progressPreloadRear, binding.textViewPreloadRear, 0);
+
+        //NEEDS IMPROVED TO GET TRUE VALUE
+        this.mSharedActivity.setTrueValuesToActivity(Constants.WHEEL_RATE_FRONT_MAX, Constants.WHEEL_RATE_FRONT_MIN,
+                Constants.WHEEL_RATE_FRONT_ITERATE_LIST.get(Integer.parseInt(
+                        mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_FL)))
+                        - Constants.WHEEL_RATE_FRONT_ITERATE_LIST.get(0),
                 binding.progressBarWheelRateLf, binding.textViewWheelRateLf, 0);
 
-        this.mSharedActivity.setTrueValuesToActivity(Constants.TC_MAX, Constants.TC_MIN,
-                Float.valueOf(mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_FR)),
-                binding.progressBarWheelRateLr, binding.textViewWheelRateLr, 1);
+        this.mSharedActivity.setTrueValuesToActivity(Constants.WHEEL_RATE_FRONT_MAX, Constants.WHEEL_RATE_FRONT_MIN,
+                Constants.WHEEL_RATE_FRONT_ITERATE_LIST.get(Integer.parseInt(
+                        mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_FR)))
+                        - Constants.WHEEL_RATE_FRONT_ITERATE_LIST.get(0),
+                binding.progressBarWheelRateRf, binding.textViewWheelRateRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.WHEEL_RATE_REAR_MAX, Constants.WHEEL_RATE_REAR_MIN,
+                Constants.WHEEL_RATE_REAR_ITERATE_LIST.get(Integer.parseInt(
+                        mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_RL)))
+                        - Constants.WHEEL_RATE_REAR_ITERATE_LIST.get(0),
+                binding.progressBarWheelRateLr, binding.textViewWheelRateLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.WHEEL_RATE_REAR_MAX, Constants.WHEEL_RATE_REAR_MIN,
+                Constants.WHEEL_RATE_REAR_ITERATE_LIST.get(Integer.parseInt(
+                        mSecurityPreferences.getStoredString(Constants.WHEEL_RATE_RR)))
+                        - Constants.WHEEL_RATE_REAR_ITERATE_LIST.get(0),
+                binding.progressBarWheelRateRr, binding.textViewWheelRateRr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RATE_MAX, Constants.BUMPSTOP_RATE_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_RATE_FL)) * 100,
+                binding.progressBarBumpStopRateLf, binding.textViewBumpStopRateLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RATE_MAX, Constants.BUMPSTOP_RATE_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_RATE_FR)) * 100,
+                binding.progressBarBumpStopRateRf, binding.textViewBumpStopRateRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RATE_MAX, Constants.BUMPSTOP_RATE_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_RATE_RL)) * 100,
+                binding.progressBarBumpStopRateLr, binding.textViewBumpStopRateLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RATE_MAX, Constants.BUMPSTOP_RATE_MIN,
+                Float.parseFloat(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_RATE_RR)) * 100,
+                binding.progressBarBumpStopRateRr, binding.textViewBumpStopRateRr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RANGE_FRONT_MAX, Constants.BUMPSTOP_RANGE_FRONT_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_WINDOW_FL)),
+                binding.progressBarBumpStopRangeLf, binding.textViewBumpStopRangeLf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RANGE_FRONT_MAX, Constants.BUMPSTOP_RANGE_FRONT_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_WINDOW_FR)),
+                binding.progressBarBumpStopRangeRf, binding.textViewBumpStopRangeRf, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RANGE_REAR_MAX, Constants.BUMPSTOP_RANGE_REAR_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_WINDOW_RL)),
+                binding.progressBarBumpStopRangeLr, binding.textViewBumpStopRangeLr, 0);
+
+        this.mSharedActivity.setTrueValuesToActivity(Constants.BUMPSTOP_RANGE_REAR_MAX, Constants.BUMPSTOP_RANGE_REAR_MIN,
+                Float.valueOf(mSecurityPreferences.getStoredString(Constants.BUMP_STOP_WINDOW_RR)),
+                binding.progressBarBumpStopRangeRr, binding.textViewBumpStopRangeRr, 0);
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.acc.view;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -21,8 +22,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.buttonRaceTactics.setOnClickListener(this);
-        binding.buttonSetupConfig.setOnClickListener(this);
+        if (!isFinishing()) {
+            binding.buttonRaceTactics.setOnClickListener(this);
+            binding.buttonSetupConfig.setOnClickListener(this);
+        }
     }
 
     @Override
@@ -33,11 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLastClickTime = SystemClock.elapsedRealtime();
         if (view.getId() == binding.buttonRaceTactics.getId()) {
             Intent intent = new Intent(this, RaceTacticsActivity.class);
-            startActivity(intent);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         }
         if (view.getId() == binding.buttonSetupConfig.getId()) {
             Intent intent = new Intent(this, SetupConfigActivity.class);
-            startActivity(intent);
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         }
     }
 }

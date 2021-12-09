@@ -4,7 +4,6 @@
     <string name="lap_time">Lap Time</string>
     <string name="stint_length">Stint Length</string>
     <string name="litres_per_lap">Litres per Lap</string>
-    <string name="formation_on_lap">Formation on Lap</string>
     <string name="s">s</string>
     <string name="m">m</string>
     <string name="l">L</string>
@@ -50,4 +49,12 @@
     <string name="camber">camber</string>
     <string name="caster">caster</string>
     <string name="error">ERROR</string>
+    <string name="title_fuel_calculator">FUEL CALCULATOR</string>
+    <string name="fuel_load">FUEL LOAD</string>
+    <string name="safe_fuel">Safe Fuel</string>
+    <string name="risky_fuel">Risky Fuel</string>
+    <string name="data">DATA</string>
+    <string name="formation_lap">Formation Lap</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
 </resources>

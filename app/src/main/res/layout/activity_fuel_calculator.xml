@@ -1,166 +1,353 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:background="@color/backgroundGrey"
     tools:context=".view.FuelCalculatorActivity">
 
-    <TextView
-        android:id="@+id/text_lap_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:text="@string/lap_time"
-        android:textSize="26sp" />
+    <ImageView
+        style="@style/ImageViewBackground"
+        android:contentDescription="@string/background" />
 
-    <TextView
-        android:id="@+id/text_sting_length"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_lap_time"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:text="@string/stint_length"
-        android:textSize="26sp" />
-
-    <TextView
-        android:id="@+id/text_litres_per_lap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_sting_length"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:text="@string/litres_per_lap"
-        android:textSize="26sp" />
-
-
-    <EditText
-        android:id="@+id/edit_lap_time_minutes"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/text_lap_time_minutes"
-        android:gravity="center"
-        android:inputType="numberSigned"
-        />
-
-    <TextView
-        android:id="@+id/text_lap_time_minutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/edit_lap_time_seconds"
-        android:gravity="center"
-        android:text="@string/m"
-        android:textSize="26sp" />
-
-    <EditText
-        android:id="@+id/edit_lap_time_seconds"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/text_lap_time_seconds"
-        android:gravity="center"
-        android:inputType="numberSigned"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/text_lap_time_seconds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:text="@string/s"
-        android:textSize="26sp" />
-
-    <EditText
-        android:id="@+id/edit_sting_length_minutes"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_lap_time_minutes"
-        android:layout_toStartOf="@+id/text_sting_length_minutes"
-        android:gravity="center"
-        android:inputType="numberSigned"
-        />
-
-    <TextView
-        android:id="@+id/text_sting_length_minutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_lap_time_minutes"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:text="@string/m"
-        android:textSize="26sp" />
-
-    <EditText
-        android:id="@+id/edit_litres_per_lap_litres"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_sting_length_minutes"
-        android:layout_toStartOf="@+id/text_litres_per_lap_litres"
-        android:gravity="center"
-        android:inputType="numberDecimal"
-        android:digits="0123456789."
-        />
-
-    <TextView
-        android:id="@+id/text_litres_per_lap_litres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_sting_length_minutes"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:text="@string/l"
-        android:textSize="26sp" />
-
-    <CheckBox
-        android:id="@+id/checkbox_formation_on_lap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_litres_per_lap"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:text="@string/formation_on_lap"
-        android:textSize="26sp" />
-
-    <TextView
-        android:id="@+id/text_litres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_calculate_fuel"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:text="@string/safe_litres"
-        android:textSize="26sp" />
-
-    <TextView
-        android:id="@+id/text_calculated_litres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_calculate_fuel"
-        android:layout_toStartOf="@+id/text_l"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="26sp" />
-
-    <TextView
-        android:id="@+id/text_l"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_calculate_fuel"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:text="@string/l"
-        android:textSize="26sp" />
-
-    <Button
-        android:id="@+id/button_calculate_fuel"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:padding="24dp"
-        android:text="@string/calculate"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <View
+            android:id="@+id/view_fuel_calculator"
+            style="@style/PrimaryTitleView" />
+
+        <TextView
+            android:id="@+id/text_view_fuel_calculator"
+            style="@style/PrimaryTitleTextView"
+            android:layout_alignStart="@+id/view_fuel_calculator"
+            android:layout_alignTop="@+id/view_fuel_calculator"
+            android:layout_alignEnd="@+id/view_fuel_calculator"
+            android:layout_alignBottom="@+id/view_fuel_calculator"
+            android:text="@string/title_fuel_calculator" />
+
+        <View
+            android:id="@+id/view_arrow_backward"
+            style="@style/ViewArrowBack"
+            android:layout_alignTop="@+id/text_view_fuel_calculator"
+            android:layout_alignBottom="@+id/text_view_fuel_calculator" />
+
+
+        <LinearLayout
+            style="@style/LinearView"
+            android:layout_above="@+id/view_pub_fuel_calculator"
+            android:layout_below="@+id/view_fuel_calculator"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_fuel_load"
+                        style="@style/SecondTitleView" />
+
+                    <TextView
+                        android:id="@+id/text_fuel_load"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_fuel_load"
+                        android:layout_alignTop="@+id/view_fuel_load"
+                        android:layout_alignEnd="@+id/view_fuel_load"
+                        android:layout_alignBottom="@+id/view_fuel_load"
+                        android:text="@string/fuel_load" />
+
+                    <TextView
+                        android:id="@+id/text_view_safe_fuel1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_fuel_load"
+                        android:text="@string/safe_fuel" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_safe_fuel"
+                        style="@style/ProgressBarFuel"
+                        android:layout_alignTop="@+id/text_view_safe_fuel1"
+                        android:layout_alignBottom="@+id/text_view_safe_fuel1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_safe_fuel"
+                        style="@style/TextViewProgressBarFuel"
+                        android:layout_alignStart="@id/progress_safe_fuel"
+                        android:layout_alignTop="@id/progress_safe_fuel"
+                        android:layout_alignEnd="@id/progress_safe_fuel"
+                        android:layout_alignBottom="@id/progress_safe_fuel" />
+
+                    <TextView
+                        android:id="@+id/text_view_risky_fuel1"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_safe_fuel1"
+                        android:text="@string/risky_fuel" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_risky_fuel"
+                        style="@style/ProgressBarFuel"
+                        android:layout_alignTop="@+id/text_view_risky_fuel1"
+                        android:layout_alignBottom="@+id/text_view_risky_fuel1"
+                        android:theme="@style/ProgressBar" />
+
+                    <TextView
+                        android:id="@+id/text_view_risky_fuel"
+                        style="@style/TextViewProgressBarFuel"
+                        android:layout_alignStart="@id/progress_risky_fuel"
+                        android:layout_alignTop="@id/progress_risky_fuel"
+                        android:layout_alignEnd="@id/progress_risky_fuel"
+                        android:layout_alignBottom="@id/progress_risky_fuel" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_calculate_fuel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:text="@string/calculate"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/table_background"
+                    android:paddingBottom="5dp">
+
+                    <View
+                        android:id="@+id/view_data"
+                        style="@style/SecondTitleView"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp" />
+
+                    <TextView
+                        android:id="@+id/text_data"
+                        style="@style/SecondTitleTextView"
+                        android:layout_alignStart="@+id/view_data"
+                        android:layout_alignTop="@+id/view_data"
+                        android:layout_alignEnd="@+id/view_data"
+                        android:layout_alignBottom="@+id/view_data"
+                        android:text="@string/data" />
+
+                    <TextView
+                        android:id="@+id/text_view_sting_length"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/view_data"
+                        android:text="@string/stint_length" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_stint_length"
+                        style="@style/ProgressBarFuelData"
+                        android:layout_alignTop="@+id/text_view_sting_length"
+                        android:layout_alignBottom="@+id/text_view_sting_length"
+                        android:theme="@style/ProgressBar" />
+
+                    <EditText
+                        android:id="@+id/edit_stint_length_minutes"
+                        style="@style/TextViewProgressBarFuelData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/progress_stint_length"
+                        android:layout_alignTop="@id/progress_stint_length"
+                        android:layout_alignEnd="@id/progress_stint_length"
+                        android:layout_alignBottom="@id/progress_stint_length"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:autofillHints="minutes"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:maxLength="10"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        style="@style/ThirdTitleTextView"
+                        android:layout_alignTop="@+id/text_view_sting_length"
+                        android:layout_alignBottom="@+id/text_view_sting_length"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="30dp"
+                        android:text="@string/m"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_view_lap_time"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_sting_length"
+                        android:text="@string/lap_time" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_lap_time_seconds"
+                        style="@style/ProgressBarFuelData"
+                        android:layout_width="60dp"
+                        android:layout_alignTop="@+id/text_view_lap_time"
+                        android:layout_alignBottom="@+id/text_view_lap_time"
+                        android:theme="@style/ProgressBar" />
+
+                    <EditText
+                        android:id="@+id/edit_lap_time_seconds"
+                        style="@style/TextViewProgressBarFuelData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/progress_lap_time_seconds"
+                        android:layout_alignTop="@id/progress_lap_time_seconds"
+                        android:layout_alignEnd="@id/progress_lap_time_seconds"
+                        android:layout_alignBottom="@id/progress_lap_time_seconds"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:autofillHints="seconds"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:maxLength="2"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        style="@style/ThirdTitleTextView"
+                        android:layout_alignTop="@+id/text_view_lap_time"
+                        android:layout_alignBottom="@+id/text_view_lap_time"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="30dp"
+                        android:text="@string/s"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/progress_lap_time_minutes"
+                        style="@style/ProgressBarFuelData"
+                        android:layout_width="60dp"
+                        android:layout_alignTop="@+id/text_view_lap_time"
+                        android:layout_alignBottom="@+id/text_view_lap_time"
+                        android:layout_alignParentEnd="false"
+                        android:layout_marginEnd="30dp"
+                        android:layout_toStartOf="@+id/progress_lap_time_seconds"
+                        android:theme="@style/ProgressBar" />
+
+                    <EditText
+                        android:id="@+id/edit_lap_time_minutes"
+                        style="@style/TextViewProgressBarFuelData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/progress_lap_time_minutes"
+                        android:layout_alignTop="@id/progress_lap_time_minutes"
+                        android:layout_alignEnd="@id/progress_lap_time_minutes"
+                        android:layout_alignBottom="@id/progress_lap_time_minutes"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:autofillHints="minutes"
+                        android:gravity="center"
+                        android:maxLength="2"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        style="@style/ThirdTitleTextView"
+                        android:layout_alignTop="@+id/text_view_lap_time"
+                        android:layout_alignBottom="@+id/text_view_lap_time"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="120dp"
+                        android:text="@string/m"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_view_litres_per_lap"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_lap_time"
+                        android:text="@string/litres_per_lap" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_litres_per_lap"
+                        style="@style/ProgressBarFuelData"
+                        android:layout_alignTop="@+id/text_view_litres_per_lap"
+                        android:layout_alignBottom="@+id/text_view_litres_per_lap"
+                        android:theme="@style/ProgressBar" />
+
+                    <EditText
+                        android:id="@+id/edit_litres_per_lap_litres"
+                        style="@style/TextViewProgressBarFuelData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/progress_litres_per_lap"
+                        android:layout_alignTop="@id/progress_litres_per_lap"
+                        android:layout_alignEnd="@id/progress_litres_per_lap"
+                        android:layout_alignBottom="@id/progress_litres_per_lap"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:autofillHints="litres"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:maxLength="10"
+                        tools:ignore="LabelFor" />
+
+                    <TextView
+                        style="@style/ThirdTitleTextView"
+                        android:layout_alignTop="@+id/text_view_litres_per_lap"
+                        android:layout_alignBottom="@+id/text_view_litres_per_lap"
+                        android:layout_alignParentStart="false"
+                        android:layout_alignParentEnd="true"
+                        android:paddingEnd="30dp"
+                        android:text="@string/l"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_view_formation_lap"
+                        style="@style/ThirdTitleTextView"
+                        android:layout_below="@+id/text_view_litres_per_lap"
+                        android:text="@string/formation_lap" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_formation_lap"
+                        style="@style/CustomCheckBox"
+                        android:layout_alignTop="@+id/text_view_formation_lap"
+                        android:layout_alignBottom="@+id/text_view_formation_lap"
+                        android:background="@drawable/custom_checkbox"
+                        android:button="@null" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_pub_fuel_calculator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

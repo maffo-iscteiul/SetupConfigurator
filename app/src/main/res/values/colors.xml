@@ -11,4 +11,6 @@
     <color name="backgroundScroll">#30FF0000</color>
     <color name="backgroundGrey">#70000000</color>
     <color name="progressGrey">#141314</color>
+    <color name="backgroundProgressBar">#89000000</color>
+    <color name="light_grey">#7C7C7C</color>
 </resources>

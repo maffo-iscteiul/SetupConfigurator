@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -253,7 +253,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -342,7 +342,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -431,7 +431,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
@@ -521,7 +521,7 @@
                     android:id="@+id/relative_layout_rear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/square_background"
+                    android:background="@drawable/table_background"
                     android:paddingBottom="5dp">
 
                     <View
